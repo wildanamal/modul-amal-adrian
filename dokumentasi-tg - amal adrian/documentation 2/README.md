@@ -72,13 +72,14 @@ p {
 }
 </style>
 ```
+<div class="contoh-container">
+    <h1>My First CSS Example</h1>
+    <p>This is a paragraph.</p>
+</div>
 
 <div class="tab-pane" data-tab="image">
 
   ![Description of paus image](images/css_gambar.jpg)
 </div>
-
-
-
 
 
