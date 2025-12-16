@@ -1,1 +1,1 @@
-adrian ganteng
+adrian ganteng bangett
