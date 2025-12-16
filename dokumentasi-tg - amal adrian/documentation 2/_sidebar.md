@@ -1,0 +1,6 @@
+- [:package: HTML cheat sheet](README.md)
+- [:eye: View ](views/ContohPenulisan.md)
+- [:gear: CSS cheat sheet](views/guides/comments.md)
+- [:gear: Javascript cheat sheet](views/guides/content-categories.md)
+- [:gear: Creating Controller](views/how_to/Define-terms-with-HTML.md)
+- [:gear: Creating Controller](views/how_to/Use-data-attributes.md)

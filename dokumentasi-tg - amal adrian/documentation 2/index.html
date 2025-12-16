@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no, viewport-fit=cover"
+    />
+
+    <!-- Replace with your own title and description. -->
+    <title>TalantGroup</title>
+    <meta
+      name="description"
+      content="An awesome docsify site for publishing some content on the web."
+    />
+
+    <!-- Theme stylesheets -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"
+      disabled
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <div id="theme-toggle"></div>
+
+    <script>
+      window.$docsify = {
+        name: "TalentGroup",
+        logo: 'images/paus.jpg',
+
+        // Sidebar Configuration
+        auto2top: true,
+        loadSidebar: true,
+        maxLevel: 0,
+        subMaxLevel: 3,
+
+        search: {
+          placeholder: "Type to search",
+          noData: "No matches found.",
+          depth: 2,
+        },
+      };
+    </script>
+
+    <script>
+      window.$docsify.plugins = [].concat(
+        window.$docsify.plugins || [],
+        function (hook) {
+          hook.afterEach(function (html) {
+            return html.replace(/<TabbedViewer\s*\/>/, function () {
+              return `
+        <div class="tab-container">
+          <div class="tab-buttons">
+            <button class="tab-button active" data-tab="code">Code View</button>
+            <button class="tab-button" data-tab="image">Image View</button>
+          </div>
+          <div class="tab-content">
+            <div class="tab-pane active" data-tab="code">
+              <pre><code class="language-php">Your code here...</code></pre>
+            </div>
+            <div class="tab-pane" data-tab="image">
+              <img src="your-image-path.jpg" alt="Preview">
+            </div>
+          </div>
+        </div>`;
+            });
+          });
+
+          hook.doneEach(function () {
+            const tabContainers = document.querySelectorAll(".tab-container");
+
+            tabContainers.forEach((container) => {
+              const tabButtons = container.querySelectorAll(".tab-button");
+              const tabPanes = container.querySelectorAll(".tab-pane");
+
+              tabButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                  const targetTab = button.dataset.tab;
+
+                  // Remove active class from all buttons and panes in this container
+                  tabButtons.forEach((btn) => btn.classList.remove("active"));
+                  tabPanes.forEach((pane) => pane.classList.remove("active"));
+
+                  // Add active class to clicked button and corresponding pane
+                  button.classList.add("active");
+                  container
+                    .querySelector(`.tab-pane[data-tab="${targetTab}"]`)
+                    .classList.add("active");
+                });
+              });
+            });
+          });
+        }
+      );
+    </script>
+
+    <!-- Add this right after your docsify configuration script -->
+    <script>
+      window.$docsify.plugins = [].concat(
+        window.$docsify.plugins || [],
+        function (hook) {
+          hook.mounted(function () {
+            // Create theme toggle button
+            const themeToggle = document.createElement("button");
+            themeToggle.className = "theme-toggle";
+            themeToggle.setAttribute("aria-label", "Toggle theme");
+            themeToggle.innerHTML = `
+              <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+              <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            `;
+
+            // Add button to the body
+            document.body.appendChild(themeToggle);
+
+            // Set initial theme
+            document.documentElement.setAttribute("data-theme", "dark");
+
+            // Theme toggle functionality
+            themeToggle.addEventListener("click", () => {
+              const currentTheme =
+                document.documentElement.getAttribute("data-theme");
+              const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+              document.documentElement.setAttribute("data-theme", newTheme);
+
+              // Toggle stylesheets
+              const darkTheme = document.querySelector(
+                'link[href*="theme-simple-dark.css"]'
+              );
+              const lightTheme = document.querySelector(
+                'link[href*="theme-simple.css"]'
+              );
+
+              if (newTheme === "dark") {
+                darkTheme.removeAttribute("disabled");
+                lightTheme.setAttribute("disabled", "");
+              } else {
+                darkTheme.setAttribute("disabled", "");
+                lightTheme.removeAttribute("disabled");
+              }
+            });
+          });
+        }
+      );
+    </script>
+
+    <script>
+      // Add this to your JavaScript
+      document.addEventListener("keydown", function (e) {
+        // Disable F12
+        if (e.key === "F12" || e.keyCode === 123) {
+          e.preventDefault();
+          return false;
+        }
+
+        // Disable Ctrl+Shift+I / Cmd+Option+I
+        if (
+          (e.ctrlKey && e.shiftKey && e.keyCode === 73) ||
+          (e.metaKey && e.altKey && e.keyCode === 73)
+        ) {
+          e.preventDefault();
+          return false;
+        }
+
+        // Disable Ctrl+Shift+C / Cmd+Option+C
+        if (
+          (e.ctrlKey && e.shiftKey && e.keyCode === 67) ||
+          (e.metaKey && e.altKey && e.keyCode === 67)
+        ) {
+          e.preventDefault();
+          return false;
+        }
+
+        // Disable Ctrl+Shift+J / Cmd+Option+J
+        if (
+          (e.ctrlKey && e.shiftKey && e.keyCode === 74) ||
+          (e.metaKey && e.altKey && e.keyCode === 74)
+        ) {
+          e.preventDefault();
+          return false;
+        }
+
+        // Disable Ctrl+U / Cmd+U (View Source)
+        if (
+          (e.ctrlKey && e.keyCode === 85) ||
+          (e.metaKey && e.keyCode === 85)
+        ) {
+          e.preventDefault();
+          return false;
+        }
+      });
+
+      // Disable right-click context menu
+      document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+        return false;
+      });
+
+      // Disable DevTools
+      window.addEventListener("devtoolschange", function (e) {
+        if (e.detail.open) {
+          window.location.reload();
+        }
+      });
+
+      // Additional protection against DevTools
+      setInterval(function () {
+        debugger;
+      }, 100);
+
+      // Add warning message
+      function showWarningMessage() {
+        console.log(
+          "%cStop!",
+          "color: red; font-size: 40px; font-weight: bold;"
+        );
+        console.log(
+          "%cThis is a protected website. Inspection is not allowed.",
+          "font-size: 20px;"
+        );
+      }
+
+      // Call warning message
+      showWarningMessage();
+    </script>
+
+    <!-- Required -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+
+    <!-- Recommended -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
+  </body>
+</html>

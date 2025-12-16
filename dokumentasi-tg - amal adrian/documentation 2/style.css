@@ -1,0 +1,200 @@
+
+      /* Disable text selection */
+      /* * {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      } */
+
+      :root {
+        --tab-bg-default: #2c3e50;
+        --tab-bg-active: #34495e;
+        --tab-text-default: #ecf0f1;
+        --tab-text-active: #ffffff;
+        --tab-border-color: #3498db;
+      }
+
+      .tab-container {
+        margin: 20px 0;
+        background: var(--background);
+      }
+
+      .tab-buttons {
+        display: flex;
+        gap: 4px;
+      }
+
+      .tab-button {
+        padding: 8px 16px;
+        background: var(--tab-bg-default);
+        border: none;
+        cursor: pointer;
+        border-radius: 4px 4px 0 0;
+        color: var(--tab-text-default);
+        transition: all 0.3s ease;
+      }
+
+      .tab-button:hover {
+        background: var(--tab-bg-active);
+        color: var(--tab-text-active);
+      }
+
+      .tab-button.active {
+        background: var(--tab-bg-active);
+        color: var(--tab-text-active);
+        border-bottom: 2px solid var(--tab-border-color);
+      }
+
+      .tab-content {
+        padding: 16px;
+        background: var(--blockquote-background);
+        border-radius: 0 4px 4px 4px;
+      }
+
+      .tab-pane {
+        display: none;
+      }
+
+      .tab-pane.active {
+        display: block;
+      }
+    
+      /* Add or update in your <style> section */
+      :root {
+        /* Responsive variables */
+        --toggle-size-desktop: 24px;
+        --toggle-size-tablet: 22px;
+        --toggle-size-mobile: 20px;
+        --toggle-position-desktop: 16px;
+        --toggle-position-tablet: 14px;
+        --toggle-position-mobile: 12px;
+      }
+
+      .theme-toggle {
+        position: fixed;
+        top: var(--toggle-position-desktop);
+        right: var(--toggle-position-desktop);
+        padding: 8px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        background: transparent;
+        transition: all 0.3s ease;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .theme-toggle:hover {
+        background-color: rgba(128, 128, 128, 0.2);
+        transform: scale(1.1);
+      }
+
+      .theme-toggle:active {
+        transform: scale(0.95);
+      }
+
+      .theme-toggle svg {
+        width: var(--toggle-size-desktop);
+        height: var(--toggle-size-desktop);
+        stroke: currentColor;
+        transition: all 0.3s ease;
+      }
+
+      /* Dark theme icon colors */
+      [data-theme="dark"] .theme-toggle .sun {
+        display: block;
+        color: #f9d71c;
+      }
+
+      [data-theme="dark"] .theme-toggle .moon {
+        display: none;
+      }
+
+      /* Light theme icon colors */
+      [data-theme="light"] .theme-toggle .sun {
+        display: none;
+      }
+
+      [data-theme="light"] .theme-toggle .moon {
+        display: block;
+        color: #4a5568;
+      }
+
+      /* Responsive styles */
+      @media screen and (max-width: 1024px) {
+        .theme-toggle {
+          top: var(--toggle-position-tablet);
+          right: var(--toggle-position-tablet);
+        }
+
+        .theme-toggle svg {
+          width: var(--toggle-size-tablet);
+          height: var(--toggle-size-tablet);
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .theme-toggle {
+          top: var(--toggle-position-mobile);
+          right: var(--toggle-position-mobile);
+        }
+
+        .theme-toggle svg {
+          width: var(--toggle-size-mobile);
+          height: var(--toggle-size-mobile);
+        }
+      }
+
+      /* Add responsive styles for the Docsify content */
+      @media screen and (max-width: 768px) {
+        .markdown-section {
+          padding: 16px !important;
+        }
+
+        .sidebar {
+          padding: 16px !important;
+        }
+
+        /* Adjust font sizes for better mobile reading */
+        .markdown-section h1 {
+          margin-left: 25px;
+          font-size: 1.8rem !important;
+        }
+
+        .markdown-section h2 {
+          font-size: 1.5rem !important;
+        }
+
+        .markdown-section p,
+        .markdown-section ul,
+        .markdown-section ol {
+          font-size: 0.95rem !important;
+          line-height: 1.6 !important;
+        }
+      }
+
+      /* Handle smaller screens */
+      @media screen and (max-width: 480px) {
+        .markdown-section {
+          padding: 12px !important;
+        }
+
+        .markdown-section h1 {
+          margin-left: 25px;
+          font-size: 1.6rem !important;
+        }
+
+        .markdown-section h2 {
+          font-size: 1.3rem !important;
+        }
+
+        .markdown-section p,
+        .markdown-section ul,
+        .markdown-section ol {
+          font-size: 0.9rem !important;
+        }
+      }
+    
