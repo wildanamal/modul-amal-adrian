@@ -1,7 +1,9 @@
-# 📘 **Apa Itu CSS??**
+
+
+## 📘 **Apa Itu CSS??**
 > **CSS (Cascading Style Sheets)**  adalah bahasa yang digunakan untuk mengatur tampilan visual sebuah website. Jika HTML diibaratkan sebagai kerangka atau struktur bangunan, maka CSS adalah bagian yang menentukan warna cat, ukuran ruangan, tata letak, dan dekorasi agar bangunan terlihat menarik dan nyaman dilihat.
 
-# 🛠 **Fungsi CSS**
+## 🛠 **Fungsi CSS**
 > CSS memiliki peran yang cukup penting pada desain sebuah website karena berfungsi sebagai pengatur tampilan visual yang menentukan bagaimana sebuah halaman web dilihat dan dirasakan oleh pengguna. Dengan CSS, pengembang dapat mengubah halaman web yang awalnya sederhana menjadi lebih menarik, rapi, dan mudah digunakan. kalau misal gaada CSS nya sebuah webiste hanya akan terlihat teks dan elemen-elemen dasar.
 
 **Fungsi-fungsi CSS diantaranya**
@@ -54,32 +56,33 @@
 </style>
 ```
  
-# **Contoh Penggunaan**
+<h1> Contoh Penggunaan </h1>
+
 ```HTML
 <style>
 body {
   background-color: lightblue;
 }
-
 h1 {
   color: white;
   text-align: center;
 }
-
 p {
   font-family: verdana;
   font-size: 20px;
 }
 </style>
 ```
-# **Output**
+
+<h1> Output </h1>
+
 <div class="tab-pane" data-tab="image">
 
   ![Description of paus image](images/css_gambar.jpg)
 </div>
 
 
-# 📂 **Perbedaan HTML dan CSS** 
+## 📂 **Perbedaan HTML dan CSS** 
 
 > HTML dan CSS memiliki fungsi yang berbeda namun saling melengkapi. HTML bertugas menyusun struktur konten, sedangkan CSS bertugas mengatur tampilannya.
 >
