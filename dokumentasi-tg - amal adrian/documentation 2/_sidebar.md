@@ -1,4 +1,4 @@
-- [:package: HTML cheat sheet](README.md)
+- [:package: CSS INTRODUCTION](README.md)
 - [:eye: View ](views/ContohPenulisan.md)
 - [:gear: CSS cheat sheet](views/guides/comments.md)
 - [:gear: Javascript cheat sheet](views/guides/content-categories.md)
