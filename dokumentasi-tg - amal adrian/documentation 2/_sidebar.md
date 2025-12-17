@@ -1,5 +1,5 @@
-- [:package: CSS INTRODUCTION](README.md)
-- [:eye: View ](views/ContohPenulisan.md)
+- [:gear: CSS](README.md)
+- [:eye: Level 0 ](views/bandit/level0.md)
 - [:gear: CSS cheat sheet](views/guides/comments.md)
 - [:gear: Javascript cheat sheet](views/guides/content-categories.md)
 - [:gear: Creating Controller](views/how_to/Define-terms-with-HTML.md)
