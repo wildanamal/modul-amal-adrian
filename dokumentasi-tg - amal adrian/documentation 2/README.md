@@ -6,58 +6,48 @@
 
 **Fungsi-fungsi CSS diantaranya**
 - Mengatur Warna dan Latar Belakang
-  ```HTML 
-  <style>
+  ```css 
     body {
   background-color: lightblue;
     }
-</style>
+  ```
 
 - Mengatur Teks dan Font
-```HTML
-<style>
+```css
     p {
       font-family: Arial;
       font-size: 16px;
       color: Black;
     }
-</style>
 ```
 - Mengatur jarak dan ukuran elemen
-```HTML
-<style>
+```css
   div {
   margin: 20px;
   padding: 10px;
 }
-</style>
 ```
 
 - Mengatur Tata Letak (Layout)
-```HTML
-<style>
+```css
   .container {
   display: flex;
   justify-content: center;
 }
-</style>
 ```
 
 - Membuat Tampilan Responsif
-```HTML
-<style> 
+```css
 @media (max-width: 600px) {
   body {
     background-color: white;
-  }
+     }
 }
-</style>
 ```
  
 <h1> Contoh Penggunaan </h1>
 
-```HTML
-<style>
+```css
 body {
   background-color: lightblue;
 }
@@ -69,7 +59,6 @@ p {
   font-family: verdana;
   font-size: 20px;
 }
-</style>
 ```
 
 <h1> Output </h1>
