@@ -91,6 +91,7 @@ p {
 >Dengan kata lain, HTML adalah kerangka website, sedangkan CSS adalah desain dan dekorasinya.
 
 
-## 📃Selector CSS 
+## 📃**Selector CSS** 
 <table> <tr> <th>Selektor</th> <th>Fungsi</th> <th>Contoh</th> </tr> <tr> <td><code>*</code></td> <td>Semua elemen</td> <td><code>* { }</code></td> </tr> <tr> <td><code>tag</code></td> <td>Elemen HTML tertentu</td> <td><code>p { }</code></td> </tr> <tr> <td><code>.class</code></td> <td>Berdasarkan class</td> <td><code>.menu { }</code></td> </tr> <tr> <td><code>#id</code></td> <td>Berdasarkan id</td> <td><code>#judul { }</code></td> </tr> <tr> <td><code>tag1, tag2</code></td> <td>Gabungan selektor</td> <td><code>h1, h2 { }</code></td> </tr> <tr> <td><code>tag.class</code></td> <td>Tag dengan class tertentu</td> <td><code>p.tebal { }</code></td> </tr> <tr> <td><code>tag tag</code></td> <td>Elemen di dalam elemen lain</td> <td><code>div p { }</code></td> </tr> </table>
+
 
