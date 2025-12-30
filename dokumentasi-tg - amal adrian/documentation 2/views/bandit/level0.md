@@ -36,5 +36,6 @@ dengan nama class yang ingin dipilih.
 Contoh penggunaan:
 ```css
 .text {
-  color: red;
+    color: red;
 }
+```
