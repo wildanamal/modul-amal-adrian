@@ -1,6 +1,7 @@
-- [:gear: CSS](README.md)
+- [:gear: GSW](README.md)
 - [:eye: Level 0 ](views/bandit/level0.md)
 - [:gear: CSS cheat sheet](views/guides/comments.md)
 - [:gear: Javascript cheat sheet](views/guides/content-categories.md)
 - [:gear: Creating Controller](views/how_to/Define-terms-with-HTML.md)
 - [:gear: Creating Controller](views/how_to/Use-data-attributes.md)
+- [:eye: adriancantik](views/js_cheatsheet/cheatsheet1.md)
